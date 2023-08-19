@@ -1,0 +1,11 @@
+For this project, I want to be able to make a list of japanese vocab word and 
+be able to print both in japanese(kanji, hiragana) and the english definition
+
+Therefore we want a type of list call that will store these definition and do 
+the following
+1. being able to choose a word at random
+2. storing new vocab that is not in the list
+3. having different type of modes (translating english to japanese and vis versa)
+4. having a user input to see if the vocab is in or not
+5. try to give an example on how it is being used 
+
