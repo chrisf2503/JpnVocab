@@ -9,3 +9,10 @@ the following
 4. having a user input to see if the vocab is in or not
 5. try to give an example on how it is being used 
 
+Current Objective:
+    Now we want to let user choose the following modes (study,review,new);
+Therefore within our main method we want to make these 3 new function. 
+
+void study();
+void review();
+void newCard();
