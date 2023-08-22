@@ -3,10 +3,20 @@
 #include <vector>
 #include <fstream>
 #include <string>
-
+void reviewMethod(FlashCard &f){
+    std::cout << "How many words you want to review: ";
+    std::string numWords;
+    getline(std::cin,numWords);
+    int getNum = stoi(numWords);
+    while(getNum <= 0 || getNum >= f.get_size()+1){
+        std::cout << "Please enter a valid number: "; 
+        getline(std::cin,numWords);
+        getNum = stoi(numWords);    
+    }
+    f.reviewVocab(getNum);
+}
 void studyMethod(FlashCard &f){
-    std::cout << "There are " << f.get_size() << " words " << std::endl << 
-    "how many words you like to study: ";
+    std::cout << "how many words you like to study: ";
     std::string numWords;
     getline(std::cin,numWords);
     int getNum = stoi(numWords);
@@ -29,12 +39,14 @@ int main(int argc, char **argv) {
     filename += ".txt";
     const std::string method(argv[2]);
     FlashCard f{filename};
+    std::cout << "There are " << f.get_size() << " words " << std::endl;
     //f.print();
     if(method == "study"){
         studyMethod(f);
     }
     else if(method == "review"){
-        std::cout << "On the works " << std::endl;
+        //std::cout << "On the works " << std::endl;
+        reviewMethod(f);
         return 0;
     }
     else if(method == "new"){

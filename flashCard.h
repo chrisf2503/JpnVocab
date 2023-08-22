@@ -71,6 +71,26 @@ class FlashCard{
             }
             std::cout << correct_ << "/" << num << " correct" << std::endl;
         }
+        void reviewVocab(size_t num){
+            std::cout << "Hit Enter once you are ready to move on" << std::endl;
+            size_t count = 0;
+            std::random_shuffle(list.begin(),list.end());
+            std::vector<define>::iterator itr = list.begin();
+            while(count != num){
+                define word = *itr;
+                std::cout << count+1 << ". ";
+                if(word.kanji != "NONE"){
+                    std::cout << "Kanji: " << word.kanji << " ";
+                    std::cin.ignore();
+                }
+                std::cout << "Kana: " <<  word.hiragana << " "; 
+                std::cin.ignore();
+                std::cout << "English: " << word.english << " ";
+                std::cin.ignore();
+                ++itr;
+                count++;
+            }
+        }
         size_t get_size(){
             return list.size();
         }
