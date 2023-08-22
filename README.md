@@ -39,12 +39,13 @@ NONE             ペン           pen
 
 # Using Study method
 
-Here you will have to any of the existing chapter vocab, here you can select the number of words you wish to study. Meaning you choose if you want to study 1 up to the list size. Therefore if you say you wish to follow 1 word, you will just be given 1 random word (boring!). But if you wish to study lets say 10 words, then you will be given 10 random word. 
+Here you will have to any of the existing chapter vocab, here you can select select an existing set and study all the words at random. 
 
 Current implementation:
 This study method only allow you to guess the english word, therefore you will be give the japanese words and your goal is to guess its meaning in english. If you can't get it right the first try, then the answer will be shown
 
 More addition coming up:
+I want to add user can choose the number of words they wish to study. Meaning you choose if you want to study 1 up to the list size. Therefore if you say you wish to follow 1 word, you will just be given 1 random word (boring!). But if you wish to study lets say 10 words, then you will be given 10 random word. 
 At some point I will try to add a way to give hints (if its in kanji) so user can have an oppertunity to get a chance to keep on trying. But also give user 6 changes to guess the word. Meaning if the user doesnt get it right the first half then a hint will be given, but if the user still can get it, then the answer will be shown. 
 I also want to add where user can guess the words in japanese. Therefore if the word is given in english then they must guess the word in japanese
 
