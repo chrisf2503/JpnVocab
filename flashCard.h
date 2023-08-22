@@ -41,13 +41,12 @@ class FlashCard{
         //Now we want to get a random word in the list and then try to guess the maning
         //Let user choose the number of guesses 1 to the size of the list
         void guessKanji(size_t num){
-            int correct_ = 0;
-            
+            int correct_ = 0; size_t counter = 0;;
             std::string userinput_;
 
             std::random_shuffle(list.begin(),list.end());
-            
-            for(std::vector<define>::iterator itr = list.begin(); itr != list.end(); ++itr){
+            std::vector<define>::iterator itr = list.begin();
+            while(itr != list.end() && counter != num){
                 define word = *itr;
                 std::cout << "What is the meaning of ";
                 if(word.kanji == "NONE"){
@@ -67,8 +66,10 @@ class FlashCard{
                     correct_++;
                     std::cout << "CORRECT!" << std::endl;
                 }
+                ++itr;
+                counter++;
             }
-            std::cout << correct_ << "/" << list.size() << " correct" << std::endl;
+            std::cout << correct_ << "/" << num << " correct" << std::endl;
         }
         size_t get_size(){
             return list.size();
