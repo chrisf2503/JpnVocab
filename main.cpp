@@ -4,6 +4,20 @@
 #include <fstream>
 #include <string>
 
+void studyMethod(FlashCard &f){
+    std::cout << "There are " << f.get_size() << " words " << std::endl << 
+    "how many words you like to study: ";
+    std::string numWords;
+    getline(std::cin,numWords);
+    int getNum = stoi(numWords);
+    while(getNum <= 0 || getNum >= f.get_size()+1){
+        std::cout << "Please enter a valid number: "; 
+        getline(std::cin,numWords);
+        getNum = stoi(numWords);    
+    }
+    f.guessKanji(getNum);
+}
+
 int main(int argc, char **argv) {
     //argv[1] = name, argv[2] = method type
     //method type = studying || new || review 
@@ -16,15 +30,19 @@ int main(int argc, char **argv) {
     const std::string method(argv[2]);
     FlashCard f{filename};
     //f.print();
-    std::cout << "There are " << f.get_size() << " words " << std::endl << 
-    "how many words you like to study: ";
-    std::string numWords;
-    getline(std::cin,numWords);
-    int getNum = stoi(numWords);
-    while(getNum <= 0 || getNum >= f.get_size()+1){
-        std::cout << "Please enter a valid number: "; 
-        getline(std::cin,numWords);
-        getNum = stoi(numWords);    
+    if(method == "study"){
+        studyMethod(f);
     }
-    f.guessKanji(getNum);
+    else if(method == "review"){
+        std::cout << "On the works " << std::endl;
+        return 0;
+    }
+    else if(method == "new"){
+        std::cout << "On the works " << std::endl;
+        return 0;
+    }
+    else{
+        std::cout << "The choice of method does not exist" << std::endl;
+        return 0;
+    }
 }
