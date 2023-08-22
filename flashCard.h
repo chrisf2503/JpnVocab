@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>    // std::random_shuffle
 
 class FlashCard{
     public:
@@ -40,30 +41,34 @@ class FlashCard{
         //Now we want to get a random word in the list and then try to guess the maning
         //Let user choose the number of guesses 1 to the size of the list
         void guessKanji(size_t num){
-            int correct = 0;
-            std::string userinput;
-            for(int i = 0; i < list.size(); i++){
+            int correct_ = 0;
+            
+            std::string userinput_;
+
+            std::random_shuffle(list.begin(),list.end());
+            
+            for(std::vector<define>::iterator itr = list.begin(); itr != list.end(); ++itr){
+                define word = *itr;
                 std::cout << "What is the meaning of ";
-                if(list[i].kanji == "NONE"){
-                    std::cout << list[i].hiragana << std::endl;
+                if(word.kanji == "NONE"){
+                    std::cout << word.hiragana << std::endl;
                 }
                 else{
-                    std::cout << list[i].kanji <<std::endl;
+                    std::cout << word.kanji <<std::endl;
                 }    
                 std::cout << "Enter: ";
-                //std::cin >> userinput;
-                getline(std::cin, userinput);
-                //Now we want to give the user an opertunity to guess the word 3 times
-                //if they cant guess it write then give user a hint (if its in kanji)
-                //else say the answer
-                if(userinput != list[i].english){
-                    std::cout << "The answer is: " << list[i].english << std::endl;
+                //std::cin >> userinput_;
+                getline(std::cin, userinput_);
+                if(userinput_ != word.english){
+                    std::cout << "The answer is: " << word.english << std::endl;
+                    std::cout << word.kanji << " " << word.hiragana << " " << word.english << std::endl;
+
                 }else{
-                    correct++;
-                    std::cout << "CORRECT" << std::endl;
+                    correct_++;
+                    std::cout << "CORRECT!" << std::endl;
                 }
             }
-            std::cout << correct << "/" << list.size() << " correct" << std::endl;
+            std::cout << correct_ << "/" << list.size() << " correct" << std::endl;
         }
         size_t get_size(){
             return list.size();
