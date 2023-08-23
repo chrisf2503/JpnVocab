@@ -41,7 +41,7 @@ class FlashCard{
         //Now we want to get a random word in the list and then try to guess the maning
         //Let user choose the number of guesses 1 to the size of the list
         void guessKanji(size_t num){
-            int correct_ = 0; size_t counter = 0;;
+            int correct_ = 0; size_t counter = 0;
             std::string userinput_;
 
             std::random_shuffle(list.begin(),list.end());
@@ -99,6 +99,8 @@ class FlashCard{
             std::string kanji;
             std::string hiragana;
             std::string english;
+            //Adding japanese and english sentence with chapter grammer 
+            //std::string jpnSent; std::string engSent;
             //index 0 is kanji, index 1 is hiragana, index 2 is english
             define(const std::vector<std::string> & vocab){
                 this->kanji = vocab[0];
