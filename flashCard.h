@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>    // std::random_shuffle
-
+#include <ctime>        // std::time
+#include <cstdlib>      // std::rand, std::srand
 class FlashCard{
     public:
         //We want to the file and put them all within the list
@@ -43,7 +44,7 @@ class FlashCard{
         void guessKanji(size_t num){
             int correct_ = 0; size_t counter = 0;
             std::string userinput_;
-
+            std::srand ( unsigned ( std::time(0) ) );
             std::random_shuffle(list.begin(),list.end());
             std::vector<define>::iterator itr = list.begin();
             while(itr != list.end() && counter != num){
@@ -72,6 +73,7 @@ class FlashCard{
             std::cout << correct_ << "/" << num << " correct" << std::endl;
         }
         void reviewVocab(size_t num){
+            std::srand ( unsigned ( std::time(0) ) );
             std::cout << "Hit Enter once you are ready to move on" << std::endl;
             size_t count = 0;
             std::random_shuffle(list.begin(),list.end());
