@@ -1,0 +1,56 @@
+漢字　　		かな			英語
+NONE			ちかん			groper; pervert
+泥棒			どろぼう		thief; burglar
+犯人			はんにん		criminal
+同僚			どうりょう		colleague
+会議			かいぎ			business meeting; conference
+NONE			スピーチ		speech
+蚊			か			mosquito
+NONE			ガソリン		gasoline
+NONE			ポソター		poster
+文句			もんく			complaint
+留守			るす			absent; not at home
+警察			けいさつ		police; police station
+政府			せいふ			government
+授業料			じゅぎょうりょう	tuition
+工場			こうじょう		factory
+終電			しゅうでん		last train (of the day)
+環境			かんきょう		environment
+事			こと			things; matters
+昔			むかし			old days; past
+遠い			とおい			far (away)
+NONE			ひどい			awful
+安全（な）		あんぜん（な）	safe
+NONE			めちゃくちゃ（な）	messy; disorganized
+変（な）		へん（な）		strange; unusual
+置く			おく			to put; to lay; to place
+包む			つつむ			to wrap; to cover
+貼る			はる			to post; to stick
+焼く			やく			to bake; to burn; to grill
+NONE			やる			to give (to pets, plants, younger siblings)
+NONE			ける			to kick
+殴る			なぐる			to strike; to hit; to punch
+踏む			ふむ			to step on
+刺す			さす			to bite
+盗む			ぬすむ			to steal; to rob
+触る			さわる			to touch
+捕まる			つかまる		to be arrested; to be caught
+気が付く		きがつく		to notice
+NONE			ふる			to turn down (somebody); to reject; to jilt 
+文句を言う		もんくをいう		to complain
+NONE			いじめる		to bully
+NONE			ほめる			to praise; to say something nice
+着替える		きがえる		to change clothes
+信じる			しんじる		to believe
+NONE			ためる			to save money
+間違える		まちがえる		to make a mistake
+見つける		みつける		to find
+比べる			比べる			to compare
+NONE			バカにする		to insult; to make a fool of...
+NONE			びっくりする		to be surprised
+昼寝をする		ひるねをする		to take a nap
+連絡する		れんらくする		to contact
+午前中			ごせんちゅう		in the morning 
+NONE			~ころ			time of...;when...
+少し			すこし			a little
+NONE			とにかく		anyhow; anyway
