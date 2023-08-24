@@ -7,9 +7,8 @@
 class FlashCard{
     public:
         //We want to the file and put them all within the list
-        FlashCard(std::string fileName){
+        FlashCard(std::ifstream & words){
             std::string kanji_,kana_,english_;
-            std::ifstream words(fileName);
             if(!words.is_open()){
                 std::cout << "the file is not open!" << std::endl;
                 abort();
@@ -21,6 +20,7 @@ class FlashCard{
                 remove_Space(english_);
                 insert({kanji_,kana_,english_});
             }
+            words.close();
         }
         void remove_Space(std::string & word){
             for(int i = 0; i < word.length(); i++){
