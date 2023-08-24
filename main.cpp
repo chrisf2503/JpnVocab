@@ -3,8 +3,26 @@
 #include <vector>
 #include <fstream>
 #include <string>
-void createNew(const std::string fileName){
+void createNew(std::ofstream && fileName){
+    fileName << "漢字		かな			英語\n";
+    std::string kanji, kana, eng, userInput;
+    std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
+    while(userInput != "yes"){
+        std::cout << "Kanji: ";
+        getline(std::cin,kanji);
+        if(kanji == ""){
+            kanji = "NONE";
+        }
+        std::cout << "Kana: ";
+        getline(std::cin,kana);
+        std::cout << "English: ";
+        getline(std::cin,eng);
+        fileName << kanji + "\t\t\t" + kana + "\t\t\t" + eng + '\n';
+        std::cout << "Are you finished(type yes) if not hit enter: ";
+        getline(std::cin, userInput);
 
+    }
+    fileName.close();
 }
 void reviewMethod(FlashCard &f){
     std::cout << "How many words you want to review: ";
@@ -52,7 +70,8 @@ int main(int argc, char **argv) {
     //kanji \t\t kana \t\t english
     if(!file.is_open() && method == "new"){
         file.close();
-        std::cout << "we can make a new flashcard" << std::endl;
+        std::cout << "we can make a new flashcard!" << std::endl;
+        createNew(std::ofstream(filename));
         return 0;
     }
     FlashCard f{file};
@@ -65,6 +84,9 @@ int main(int argc, char **argv) {
         //std::cout << "On the works " << std::endl;
         reviewMethod(f);
     }// If we have an exisiting file but want to add then we should allow it
+    else if (method == "new"){
+        std::cout << "This set already exist!" << std::endl;
+    }
     else{
         std::cout << "The choice of method does not exist" << std::endl;
     }
