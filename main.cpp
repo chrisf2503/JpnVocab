@@ -46,7 +46,21 @@ void studyMethod(FlashCard &f){
         getline(std::cin,numWords);
         getNum = stoi(numWords);    
     }
-    f.guessKanji(getNum);
+    //now allow user to choose mode
+    std::cout << "What would you like to guess (choose a number)" 
+    << std::endl << "1. Guess kanji"<<std::endl<<"2. Guess English" 
+    << std::endl << "Enter: ";
+    std::string userInput_;
+    getline(std::cin,userInput_);
+    while(userInput_ != "1" && userInput_ != "2"){
+        std::cout << "Please enter a valid number: "; 
+        getline(std::cin,userInput_);
+    }
+    if(userInput_ == "1"){
+        f.guessKanji(getNum);
+    }else{
+        f.guessEngl(getNum);
+    }
 }
 
 int main(int argc, char **argv) {
