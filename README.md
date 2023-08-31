@@ -49,7 +49,10 @@ User can choose the number of words they wish to study. Meaning you choose if yo
 At some point I will try to add a way to give hints (if its in kanji) so user can have an oppertunity to get a chance to keep on trying. But also give user 6 changes to guess the word. Meaning if the user doesnt get it right the first half then a hint will be given, but if the user still can get it, then the answer will be shown. 
 
 I also want to add where user can guess the words in japanese. Therefore if the word is given in english then they must guess the word in japanese
-
+# Adding words:
+    For the new method(not yet implemented), i want to be able to add more words within a list of words that is currently existing. But here is the thing, we have to consider the following if the "word currently exist", this mean that if the word like 飲み物          のみもの            drink
+    already exist, then we should not add it to the list and tell user this word exist.
+    There for we must consider what type of data structure should be added (tree's, list, etc), and what type of algorithm will allow me to search for the word at a sufficient time. 
 # Future plans
 
 I want to include current lessons not only within my JPN class but also use CS algorithms and data structure as I advance in my classes. 
@@ -58,6 +61,7 @@ I will also try to include basic sentence structure on how vocab is being used. 
 # How to run the code
 
 If you are trying to use this in terminal, do the following 
+Method names: new/review/study 
 
 1. make main
-2. ./main <Chapter#> <Method>
+2. ./main Chapter# Method
