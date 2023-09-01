@@ -50,9 +50,12 @@ At some point I will try to add a way to give hints (if its in kanji) so user ca
 
 I also want to add where user can guess the words in japanese. Therefore if the word is given in english then they must guess the word in japanese
 # Adding words:
-    For the new method(not yet implemented), i want to be able to add more words within a list of words that is currently existing. But here is the thing, we have to consider the following if the "word currently exist", this mean that if the word like 飲み物          のみもの            drink
-    already exist, then we should not add it to the list and tell user this word exist.
-    There for we must consider what type of data structure should be added (tree's, list, etc), and what type of algorithm will allow me to search for the word at a sufficient time. 
+For the new method(not yet implemented), i want to be able to add more words within a list of words that is currently existing. But here is the thing, we have to consider the following if the "word currently exist", this mean that if the word like 飲み物          のみもの            drink          
+already exist, then we should not add it to the list and tell user this word exist.
+There for we must consider what type of data structure should be added (tree's, list, etc), and what type of algorithm will allow me to search for the word at a sufficient time. 
+# Search Word
+Givin the kanji or kana, we want to be able to look up that work from any of the following chapters, therefore we might want to have a while that will contain all word from every chapter, merge them all together, the file could be name all.txt and when adding words, we can also check if it exist or not. 
+Therefore trying to figure out which data strcutre can go best with it.
 # Future plans
 
 I want to include current lessons not only within my JPN class but also use CS algorithms and data structure as I advance in my classes. 
