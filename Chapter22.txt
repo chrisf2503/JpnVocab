@@ -1,0 +1,55 @@
+漢字		かな			英語
+風			かぜ			wind
+木			き			tree
+NONE			ボール			ball
+猿			さる			monkey
+免許			めんきょ			license
+予習			よしゅう			preparation of a lesson
+復習			ふくしゅう			review of a lesson
+塾			じゅく			cram school
+英会話			えいかいわ			english conversation
+お嬢さん			おじょうさん			(someone's) daughter (polite)
+神様			かみさま			god
+先輩			せんぱい			senior member of a group
+後輩			こうはい			junior member of a group
+部下			ぶか			subordinate
+受付			うけつけ			reception desk
+書類			しょるい			document
+NONE			プロジェクト			project
+家事			かじ			housework
+NONE			ヨーロッパ			Europe
+一人暮らし			ひとりぐらし			living alone
+自由			じゆう			freedom
+無駄遣い			むだづかい			waste(money)
+NONE			うるさい			noisy; annoying
+心配な			しんぱいな			worried about
+貧乏な			びんぼうな			poor
+NONE			ぺらぺらな			fluent (language)
+楽な			らくな			easy; comfortable
+風が吹く			かぜがふく			the wind blows
+コビーを取る			コビーをとる			to make a photocopy
+運ぶ			はこぶ			to carry
+拾う			ひろう			to pick up (something)
+放っておく			ほっておく			to leave (someone/something) alone; to neglect
+間に合う			まにあう			to be in time
+勝つ			かつ			to win
+受ける			うける			to take (an examination)
+計画を立てる			けいかくをたてる			to make a plan
+育てる			そだてる			to raise; to bring up
+助ける			たすける			to help; to rescue
+負ける			まける			to lose (a match)
+お願いする			おねがいする			to request help
+賛成する			さんせいする			to agree
+反対する			はんたいする			to oppose; to object to
+失敗する			しっぱいする			to fail; to be unsuccessful
+徹夜する			てつやする			to stay up all night
+翻訳する			ほんやくする			to translate
+NONE			こんなふう			like this
+自由に			じゆうに			freely
+NONE			ずっと			for a long time; all the time
+絶対に			ぜったいに			definitely
+何度も			なんども			many times
+もう少し			こうすこし			a little more
+NONE			〜とか			...for example
+NONE			そんなこと（は）ない			I don't think so
+多くの			おおくの			many...
