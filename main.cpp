@@ -36,7 +36,7 @@ void reviewMethod(FlashCard &f){
     }
     f.reviewVocab(getNum);
 }
-void studyMethod(FlashCard &f){
+void studyMethod(FlashCard &f,const bool &study_kanji){
     std::cout << "how many words you like to study: ";
     std::string numWords;
     getline(std::cin,numWords);
@@ -57,7 +57,7 @@ void studyMethod(FlashCard &f){
         getline(std::cin,userInput_);
     }
     if(userInput_ == "1"){
-        f.guessKanji(getNum);
+        f.guessKanji(getNum,study_kanji);
     }else{
         f.guessEngl(getNum);
     }
@@ -71,6 +71,12 @@ int main(int argc, char **argv) {
         return 0; 
     }
     std::string filename(argv[1]);
+    bool study_kanji;
+    if(filename.substr(0,5) == "Kanji"){
+        study_kanji = true;
+    }
+    else
+        study_kanji = false;
     filename += ".txt";
     const std::string method(argv[2]);
     /*Here we want to first check if the fileName exist or not
@@ -92,7 +98,7 @@ int main(int argc, char **argv) {
     std::cout << "There are " << f.get_size() << " words " << std::endl;
     //f.print();
     if(method == "study"){
-        studyMethod(f);
+        studyMethod(f,study_kanji);
     }
     else if(method == "review"){
         //std::cout << "On the works " << std::endl;

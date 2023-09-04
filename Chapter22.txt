@@ -20,7 +20,7 @@ NONE			プロジェクト			project
 NONE			ヨーロッパ			Europe
 一人暮らし			ひとりぐらし			living alone
 自由			じゆう			freedom
-無駄遣い			むだづかい			waste(money)
+無駄遣い			むだづかい			waste (money)
 NONE			うるさい			noisy; annoying
 心配な			しんぱいな			worried about
 貧乏な			びんぼうな			poor
@@ -31,7 +31,7 @@ NONE			ぺらぺらな			fluent (language)
 運ぶ			はこぶ			to carry
 拾う			ひろう			to pick up (something)
 放っておく			ほっておく			to leave (someone/something) alone; to neglect
-間に合う			まにあう			to be in time
+間に合う			まにあう			to be on time
 勝つ			かつ			to win
 受ける			うける			to take (an examination)
 計画を立てる			けいかくをたてる			to make a plan

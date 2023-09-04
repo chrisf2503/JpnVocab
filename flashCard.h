@@ -41,7 +41,7 @@ class FlashCard{
         }
         //Now we want to get a random word in the list and then try to guess the maning
         //Let user choose the number of guesses 1 to the size of the list
-        void guessKanji(const size_t &num){
+        void guessKanji(const size_t &num,const bool &study_kanji){
             int correct_ = 0; size_t counter = 0;
             std::string userinput_;
             std::srand ( unsigned ( std::time(0) ) );
@@ -53,8 +53,12 @@ class FlashCard{
                 if(word.kanji == "NONE"){
                     std::cout << word.hiragana << std::endl;
                 }
-                else{
+                else if(study_kanji == true && word.kanji != "NONE"){
                     std::cout << word.kanji <<std::endl;
+                }
+                else{
+                    std::cout << word.kanji << "(" << word.hiragana << ')'
+                    << std::endl;
                 }    
                 std::cout << "Enter: ";
                 //std::cin >> userinput_;
