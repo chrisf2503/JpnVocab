@@ -153,7 +153,7 @@ class FlashCard{
                 this->english = vocab[2];
             }
             bool operator<(const define & word)const{
-                return this->kanji < word.kanji;
+               return this->hiragana < word.hiragana;
             }
         };
         std::vector<define> list;
