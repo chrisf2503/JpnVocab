@@ -131,6 +131,14 @@ class FlashCard{
         size_t get_size(){
             return list.size();
         }
+        //if word1 is smaller then word2 then return true else; return false;
+        /*bool smaller(const define & word1,const define & word2){
+            return word1.kanji < word2.kanji;
+        }
+        //if word1 is bigger then word2 then return true else; return false;
+        bool bigger(const define & word1,const define & word2){
+            return word1.kanji > word2.kanji;
+        }*/
     private:  
         struct define{
             std::string kanji;
@@ -143,6 +151,9 @@ class FlashCard{
                 this->kanji = vocab[0];
                 this->hiragana = vocab[1];
                 this->english = vocab[2];
+            }
+            bool operator<(const define & word)const{
+                return this->kanji < word.kanji;
             }
         };
         std::vector<define> list;
