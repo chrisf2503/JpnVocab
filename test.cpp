@@ -18,8 +18,10 @@ struct define{
         this->english = vocab[2];
     }
     bool operator<(const define & word)const{
-        return this->kanji < word.kanji;
+
+        return this->kanji+this->hiragana < word.kanji + word.hiragana;
     }
+   
 };
 void remove_Space(std::string & word);
 void print(std::vector<define> & words);
@@ -32,18 +34,29 @@ int main(){
         abort();
     }
     getline(words,kanji_);
+    vocabTree<define> tree{};
+    int i = 0;
     while(words >> kanji_ >> kana_){
         getline(words,english_);
         //We want to remove the spaces and tabs
         remove_Space(english_);
         list.push_back(std::vector<std::string>{kanji_,kana_,english_});
+        tree.insert(list[i]);
+        i++;
     }
     words.close();
     print(list);
-    vocabTree<define> tree{};
-    for(int i = 0; i < list.size(); ++i){
-        tree.insert(list[i]);
+    std::cout << "we have " << list.size() << " in our list" << std::endl;
+
+    std::cout << "we have " << tree.get_size() << " in our tree" << std::endl;
+    define w({"飲み物","",""});
+    if(tree.contain(w)){
+        std::cout << "We found it" << std::endl;
     }
+    else{
+        std::cout << "couldnt find it" << std::endl;
+    }
+
 }
 void remove_Space(std::string & word){
     for(int i = 0; i < word.length(); i++){
