@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#include "flashCard.h"
+
 template<typename Comparable>
 class vocabTree{
     public:
