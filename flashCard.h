@@ -5,6 +5,7 @@
 #include <algorithm>    // std::random_shuffle
 #include <ctime>        // std::time
 #include <cstdlib>      // std::rand, std::srand
+#include "VocabTree.h"
 class FlashCard{
     public:
         //We want to the file and put them all within the list
@@ -33,6 +34,7 @@ class FlashCard{
         }
         void insert(const std::vector<std::string> && vocab){
             list.push_back(vocab);
+            tree.insert(list[list.size()-1]);
         }
         void print(){
             for(int i = 0; i < list.size(); i++){
@@ -128,17 +130,20 @@ class FlashCard{
                 count++;
             }
         }
-        size_t get_size(){
+        bool contain(const std::string &noKanji,const std::string &kana){
+            define w({noKanji,kana,""});
+            return tree.contain(w);
+        }
+        bool contain(const std::string &kanji){
+            define w({kanji,"",""});
+            return tree.contain(w);
+        }
+        size_t get_flashCard_size(){
             return list.size();
         }
-        //if word1 is smaller then word2 then return true else; return false;
-        /*bool smaller(const define & word1,const define & word2){
-            return word1.kanji < word2.kanji;
+        size_t get_tree_size(){
+            return tree.get_size();
         }
-        //if word1 is bigger then word2 then return true else; return false;
-        bool bigger(const define & word1,const define & word2){
-            return word1.kanji > word2.kanji;
-        }*/
     private:  
         struct define{
             std::string kanji;
@@ -153,8 +158,12 @@ class FlashCard{
                 this->english = vocab[2];
             }
             bool operator<(const define & word)const{
+                if(word.kanji != "NONE"){
+                    return this->kanji < word.kanji;
+                }
                return this->hiragana < word.hiragana;
             }
         };
         std::vector<define> list;
+        vocabTree<define> tree;
 };
