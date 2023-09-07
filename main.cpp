@@ -3,6 +3,44 @@
 #include <vector>
 #include <fstream>
 #include <string>
+//We want to add a new method called Addwords where we are going to read from an
+//Exisiting file and then check if the user inputs are valid or not
+//Therefore we will make the list/tree and let user input until we get a 
+//signal of if the words exist or not, if the word exist, then we must tell user,
+//we have a the word, else continue
+void addingToExisting(FlashCard & f,std::ofstream && filename){
+    std::string kanji, kana, eng, userInput;
+    filename << std::endl;
+    std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
+    while(userInput != "yes"){
+        std::cout << "Kanji: ";
+        getline(std::cin,kanji);
+        if(kanji == ""){
+            kanji = "NONE";
+        }else{
+            if(f.contain(kanji)){
+                std::cout << "word already exist" << std::endl;
+                continue;
+            }
+        }
+        std::cout << "Kana: ";
+        getline(std::cin,kana);
+        if(kanji == "NONE"){
+            if(f.contain(kanji,kana)){
+                std::cout << "word already exist" << std::endl;
+                continue;
+            }
+        }
+        std::cout << "English: ";
+        getline(std::cin,eng);
+        filename << kanji + "\t\t\t" + kana + "\t\t\t" + eng + '\n';
+        f.insert({kanji,kana,eng});
+        std::cout << "Are you finished(type yes) if not hit enter: ";
+        getline(std::cin, userInput);
+
+    }
+    filename.close();
+}
 void createNew(std::ofstream && fileName){
     fileName << "漢字		かな			英語\n";
     std::string kanji, kana, eng, userInput;
@@ -29,7 +67,7 @@ void reviewMethod(FlashCard &f){
     std::string numWords;
     getline(std::cin,numWords);
     int getNum = stoi(numWords);
-    while(getNum <= 0 || getNum >= f.get_size()+1){
+    while(getNum <= 0 || getNum >= f.get_flashCard_size()+1){
         std::cout << "Please enter a valid number: "; 
         getline(std::cin,numWords);
         getNum = stoi(numWords);    
@@ -41,7 +79,7 @@ void studyMethod(FlashCard &f,const bool &study_kanji){
     std::string numWords;
     getline(std::cin,numWords);
     int getNum = stoi(numWords);
-    while(getNum <= 0 || getNum >= f.get_size()+1){
+    while(getNum <= 0 || getNum >= f.get_flashCard_size()+1){
         std::cout << "Please enter a valid number: "; 
         getline(std::cin,numWords);
         getNum = stoi(numWords);    
@@ -95,7 +133,7 @@ int main(int argc, char **argv) {
         return 0;
     }
     FlashCard f{file};
-    std::cout << "There are " << f.get_size() << " words " << std::endl;
+    std::cout << "There are " << f.get_flashCard_size() << " words " << std::endl;
     //f.print();
     if(method == "study"){
         studyMethod(f,study_kanji);
@@ -103,6 +141,8 @@ int main(int argc, char **argv) {
     else if(method == "review"){
         //std::cout << "On the works " << std::endl;
         reviewMethod(f);
+    }else if (method == "add"){
+        addingToExisting(f,std::ofstream(filename,std::ios::app));
     }// If we have an exisiting file but want to add then we should allow it
     else if (method == "new"){
         std::cout << "This set already exist!" << std::endl;
