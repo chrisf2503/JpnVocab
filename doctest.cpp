@@ -1,11 +1,13 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "VocabTree.h"
+//#include "VocabTree.h"
+#include "flashCard.h"
 #include <fstream>
 #include <string>
 #include <vector>
 
-struct define{
+/*struct define{
+    //make a list of strings?
     std::string kanji;
     std::string hiragana;
     std::string english;
@@ -17,8 +19,10 @@ struct define{
         this->hiragana = vocab[1];
         this->english = vocab[2];
     }
+    //there will be a case such that we might want to store all kanji assosiated with 
+    //its kana and could possibly have more then one meaning 
     bool operator<(const define & word)const{
-        return this->hiragana < word.hiragana;
+        return this->hiragana+this->kanji < word.hiragana + word.kanji;
     }
 };
 vocabTree<define> t;
@@ -64,4 +68,19 @@ TEST_CASE("Contain word"){
     CHECK(!t.contain(w4));//false
     CHECK(t.contain(w5));
     
-}
+}*/
+//Given a word, kana or kanji, we want to get its whole meaning 
+TEST_CASE("add new words"){
+    std::ifstream f("sample.txt");
+    FlashCard vocab{f};
+    std::ifstream f2("sample2.txt");
+    FlashCard vocab2{f2};
+    CHECK(vocab.get_tree_size() == vocab.get_flashCard_size());
+    CHECK(vocab2.get_flashCard_size()!= vocab2.get_tree_size());
+    CHECK(vocab2.contain("NONE","ボール"));
+    CHECK(!vocab.contain("NONE","ボール"));
+    CHECK(vocab2.contain("木"));
+    CHECK(!vocab2.contain("NONE","き"));
+    CHECK(vocab2.contain("免許"));
+    CHECK(vocab.contain("NONE","ごめん"));
+} 
