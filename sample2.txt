@@ -1,0 +1,9 @@
+漢字　　		かな			英語
+風			かぜ			wind
+木			き			tree
+NONE			ボール			ball
+NONE			ボール			ball
+猿			さる			monkey
+免許			めんきょ			license
+晩ごはん			ばんごはん			lunch
+暑い			あつい			hot
