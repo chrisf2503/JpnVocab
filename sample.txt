@@ -6,3 +6,6 @@
 失礼します		しつれいします	Excuse me; Sorry to interrupt you
 NONE			ごめん			I’m sorry(casual)
 NONE			ごのくらい		About this much
+NONE			バール			ball
+食べ物			たべもの			food
+暑い			あつい			hot
