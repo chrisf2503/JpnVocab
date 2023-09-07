@@ -3,11 +3,15 @@
 #include <vector>
 #include <fstream>
 #include <string>
+//Now we want ot think about using the same concept in addingToExisting, to creatingNew\
+//thinking about weather it should all be one method or seperate
+
 //We want to add a new method called Addwords where we are going to read from an
 //Exisiting file and then check if the user inputs are valid or not
 //Therefore we will make the list/tree and let user input until we get a 
 //signal of if the words exist or not, if the word exist, then we must tell user,
 //we have a the word, else continue
+
 void addingToExisting(FlashCard & f,std::ofstream && filename){
     std::string kanji, kana, eng, userInput;
     filename << std::endl;
@@ -134,7 +138,6 @@ int main(int argc, char **argv) {
     }
     FlashCard f{file};
     std::cout << "There are " << f.get_flashCard_size() << " words " << std::endl;
-    //f.print();
     if(method == "study"){
         studyMethod(f,study_kanji);
     }
