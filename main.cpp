@@ -12,7 +12,7 @@
 //signal of if the words exist or not, if the word exist, then we must tell user,
 //we have a the word, else continue
 
-void addingToExisting(FlashCard & f,std::ofstream && filename){
+void add(FlashCard & f,std::ofstream & filename){
     std::string kanji, kana, eng, userInput;
     filename << std::endl;
     std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
@@ -44,27 +44,6 @@ void addingToExisting(FlashCard & f,std::ofstream && filename){
 
     }
     filename.close();
-}
-void createNew(std::ofstream && fileName){
-    fileName << "漢字		かな			英語\n";
-    std::string kanji, kana, eng, userInput;
-    std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
-    while(userInput != "yes"){
-        std::cout << "Kanji: ";
-        getline(std::cin,kanji);
-        if(kanji == ""){
-            kanji = "NONE";
-        }
-        std::cout << "Kana: ";
-        getline(std::cin,kana);
-        std::cout << "English: ";
-        getline(std::cin,eng);
-        fileName << kanji + "\t\t\t" + kana + "\t\t\t" + eng + '\n';
-        std::cout << "Are you finished(type yes) if not hit enter: ";
-        getline(std::cin, userInput);
-
-    }
-    fileName.close();
 }
 void reviewMethod(FlashCard &f){
     std::cout << "How many words you want to review: ";
@@ -133,7 +112,11 @@ int main(int argc, char **argv) {
     if(!file.is_open() && method == "new"){
         file.close();
         std::cout << "we can make a new flashcard!" << std::endl;
-        createNew(std::ofstream(filename));
+        std::ofstream write(filename);
+        write << "漢字		    かな			英語";
+        file = std::ifstream(filename);
+        FlashCard f{file};
+        add(f,write);
         return 0;
     }
     FlashCard f{file};
@@ -144,11 +127,13 @@ int main(int argc, char **argv) {
     else if(method == "review"){
         //std::cout << "On the works " << std::endl;
         reviewMethod(f);
-    }else if (method == "add"){
-        addingToExisting(f,std::ofstream(filename,std::ios::app));
     }// If we have an exisiting file but want to add then we should allow it
     else if (method == "new"){
         std::cout << "This set already exist!" << std::endl;
+    }
+    else if (method == "add"){
+        std::ofstream open(filename,std::ios::app);
+        add(f,open);
     }
     else{
         std::cout << "The choice of method does not exist" << std::endl;
