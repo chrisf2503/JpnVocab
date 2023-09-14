@@ -78,10 +78,19 @@ Method names: new/review/study
 To study and review methods do the following:
 1. make main
 2. ./main vocab# Method
+Example:
+./main Vocab21 review
+./main Vocab21 study
+./main Vocab23 add
+./main Vocab13 new
 
-If you want to review notes, then do the following:
+If you want to review notes, if you want to review all then type "All" or else type the Lesson# then do the following:
+
 1. make notes
-2. ./notes Chapter#
+2. ./notes Chapter# Lesson# 
+Example: 
+./notes Chapter21 Lesson1
+./notes Chapter21 All
 
 If you want to do doctest, then do the following:
 1. make doctest
