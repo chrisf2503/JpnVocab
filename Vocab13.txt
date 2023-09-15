@@ -1,0 +1,51 @@
+漢字		    かな			英語
+大人			おとな			adult
+弁護士			べんごし			lawyer
+NONE			クレ			curry
+紅茶			こうちゃ			black tea
+着物			きもの			kimono; Japanese traditional dress
+NONE			セーター			sweater
+楽器			がっき			musical instrument
+空手			からて			karate
+NONE			ゴルフ			golf
+NONE			バイク			motorcycle
+象			ぞう			elephant
+体			からだ			body
+外国語			がいこくご			foreign language
+文法			ぶんぽう			grammar
+NONE			アプリ			apllication
+NONE			アパート			apartment; smaller apartment building
+空港			くうこう			airport
+店			みせ			shop; store
+物価			ぶっか			consumer prices
+広告			こうこく			advertisment
+募集			ぼしゅう			recruitment
+約束			やくそく			promise; appointment
+NONE			うれしい			glad
+悲しい			かなしい			sad
+
+厳しい			きびしい			strict
+気分が悪い			きぶんがらるい			to feel sick
+辛い			からい			hot and spicy; salty
+NONE			すごい			incredible; awesome
+近い			ちかい			close; near
+色々（な）			いろいろ（な）			verious; different kinds of
+幸せ（な）			しあわせ（な）			happy (lasting happiness)
+NONE			だめ（な）			だめ（な）
+編む			あむ			to knit
+頑張る			がんばる			to do one's best; to try hard
+泣く			なく			to cry
+磨く			みがく			to brush (teeth); to polish
+約束を守る			やくそくをまもる			to keep a promise
+感動する			かんどうする			to be moved/touched (by...)
+〜回			〜かい			...times
+NONE			~キロ			...kilometers; ...kilograms
+全部			ぜんぶ			all
+特に			とくに			esecically
+二日			ふつか			two days
+~と申します			〜ともうします			my name is...
+一日			いちにち			one day
+三日			みっか			three days
+四日			よっか			four days
+五日			いつか			five days
+六日			むいか			six days
