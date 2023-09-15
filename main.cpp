@@ -11,10 +11,10 @@
 //Therefore we will make the list/tree and let user input until we get a 
 //signal of if the words exist or not, if the word exist, then we must tell user,
 //we have a the word, else continue
-
+//if we dont have any input for the english word or kana word then we should not 
+//include it within our word set (so we dont have to delete it manually)
 void add(FlashCard & f,std::ofstream & filename){
     std::string kanji, kana, eng, userInput;
-    filename << std::endl;
     std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
     while(userInput != "yes"){
         std::cout << "Kanji: ";
@@ -37,7 +37,12 @@ void add(FlashCard & f,std::ofstream & filename){
         }
         std::cout << "English: ";
         getline(std::cin,eng);
-        filename << kanji + "\t\t\t" + kana + "\t\t\t" + eng + '\n';
+        if(eng == "" || kana == ""){
+            std::cout << "We are missing imporant information! Try again!\n";
+            continue;
+        }
+        filename << kanji + "\t\t\t" + kana + "\t\t\t" + eng;
+        filename << std::endl;
         f.insert({kanji,kana,eng});
         std::cout << "Are you finished(type yes) if not hit enter: ";
         getline(std::cin, userInput);
@@ -83,7 +88,9 @@ void studyMethod(FlashCard &f,const bool &study_kanji){
         f.guessEngl(getNum);
     }
 }
-
+//We dont want to accept anything that has nothing to do with Vocabulary
+//We must check weather the first 5 letter has the words VOCAB, if it does 
+//Then we should continue, if not abort and tell user we can continue
 int main(int argc, char **argv) {
     //argv[1] = name, argv[2] = method type
     //method type = studying || new || review 
@@ -92,6 +99,11 @@ int main(int argc, char **argv) {
         return 0; 
     }
     std::string filename(argv[1]);
+    if(filename.substr(0,5) != "Vocab" && filename.substr(0,5) != "Kanji"){
+        std::cout << "Please type Vocab or Kanji and then chapter number" << std::endl;
+        std::cout << "Example: \n./main Vocab21 review\n./main Kanji21 study" << std::endl;
+        return 0;
+    }
     bool study_kanji;
     if(filename.substr(0,5) == "Kanji"){
         study_kanji = true;
