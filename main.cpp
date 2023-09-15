@@ -91,6 +91,7 @@ void studyMethod(FlashCard &f,const bool &study_kanji){
 //We dont want to accept anything that has nothing to do with Vocabulary
 //We must check weather the first 5 letter has the words VOCAB, if it does 
 //Then we should continue, if not abort and tell user we can continue
+//Firgure out how to be able to read the newWords.txt file
 int main(int argc, char **argv) {
     //argv[1] = name, argv[2] = method type
     //method type = studying || new || review 
@@ -99,6 +100,7 @@ int main(int argc, char **argv) {
         return 0; 
     }
     std::string filename(argv[1]);
+    //this condition might change because we want to access other vocab files
     if(filename.substr(0,5) != "Vocab" && filename.substr(0,5) != "Kanji"){
         std::cout << "Please type Vocab or Kanji and then chapter number" << std::endl;
         std::cout << "Example: \n./main Vocab21 review\n./main Kanji21 study" << std::endl;
