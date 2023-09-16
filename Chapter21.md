@@ -16,12 +16,3 @@ Lesson3:
 
 Lesson4:
 
-Side Note:
-We would probably want user to choose what lesson they wish to choose therefore we will skip until we reach the lesson and then close everything once its done. But user can also choose if they wish to review all the lesson, therefore for we will go lesson by lesson let user say if they are ready to continue on to the next lesson once the lesson they were on is done. 
-
-Quiestion to ask your self:
-
-Should we make a class each lesson and make a review/study section?
-Can we make function that can do conjucation based on the lesson?
-Does that mean we have to make many classes for each lesson?
-Editing the formating within eachVocab in order to 
