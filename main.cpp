@@ -101,7 +101,8 @@ int main(int argc, char **argv) {
     }
     std::string filename(argv[1]);
     //this condition might change because we want to access other vocab files
-    if(filename.substr(0,5) != "Vocab" && filename.substr(0,5) != "Kanji" && filename.substr(0,3) != "new"){
+    //if you cant find the key Word Vocab or Kanki then we want to use this if statement
+    if(filename.find("Vocab") == -1 && filename.find ("Kanji") == -1){
         std::cout << "Please type Vocab or Kanji and then chapter number" << std::endl;
         std::cout << "Example: \n./main Vocab21 review\n./main Kanji21 study" << std::endl;
         return 0;
