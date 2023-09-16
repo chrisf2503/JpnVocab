@@ -6,7 +6,6 @@
 void printAll(std::ifstream &f){
     std::string s;
     while(getline(f,s)){
-
         for(char c: s)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(50));
@@ -34,8 +33,8 @@ void printLesson(std::ifstream & f, const std::string & lesson){
                 std::cout << '\n';
                 
             }
+            break;
         }
-        break;
     }
 }
 int main(int argc, char **argv){
