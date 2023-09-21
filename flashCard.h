@@ -144,6 +144,18 @@ class FlashCard{
         size_t get_tree_size(){
             return tree.get_size();
         }
+        std::vector<std::string> find_word(const std::string & noKanji, const std::string & kana){
+            define w({noKanji,kana,""});
+            w = tree.findWord(w);
+            std::vector<std::string> found{w.kanji,w.hiragana,w.english};
+            return found;
+        }
+        std::vector<std::string> find_word(const std::string & kanji){
+            define w({kanji,"",""});
+            w = tree.findWord(w);
+            std::vector<std::string> found{w.kanji,w.hiragana,w.english};
+            return found;
+        }
     private:  
         struct define{
             std::string kanji;
