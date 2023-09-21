@@ -70,7 +70,7 @@ TEST_CASE("Contain word"){
     
 }*/
 //Given a word, kana or kanji, we want to get its whole meaning 
-TEST_CASE("add new words"){
+TEST_CASE("Containing basic words in samples"){
     std::ifstream f("sample.txt");
     FlashCard vocab{f};
     std::ifstream f2("sample2.txt");
@@ -83,4 +83,22 @@ TEST_CASE("add new words"){
     CHECK(!vocab2.contain("NONE","き"));
     CHECK(vocab2.contain("免許"));
     CHECK(vocab.contain("NONE","ごめん"));
-} 
+}
+TEST_CASE("Find and get word"){
+    std::ifstream f("sample.txt");
+    FlashCard vocab{f};
+    std::ifstream f2("sample2.txt");
+    FlashCard vocab2{f2};
+    CHECK(vocab2.contain("木"));
+    std::vector<std::string> s = vocab2.find_word("木");
+    CHECK(s[0] == "木");
+    CHECK(s[1] == "き");
+    CHECK(s[2] == "tree");
+    if(vocab.contain("NONE","ごめん")){
+        s = vocab.find_word("NONE","ごめん");
+        CHECK(s[0] == "NONE");
+        CHECK(s[1] == "ごめん");
+        CHECK(s[2] == "I’m sorry(casual)");
+    }
+    
+}
