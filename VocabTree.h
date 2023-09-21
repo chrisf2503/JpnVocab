@@ -20,9 +20,32 @@ class vocabTree{
         int get_size()const{
             return this->numNodes;
         }
-        bool empty(){
-            return root == nullptr;
+        bool is_empty(){
+            return (root == nullptr);
         }
+        /*For search we want to be given the one of the following:
+            Kanji, kana, english
+            And we want to find its meaning for english,
+            lets assume that if we are given in hiragana, and has no kanji 
+            assiated with it, then we shall return only the english portion
+            else if we are given the kanji, then we shall give back its kana 
+            and english def
+
+        In order to do general search, we should consider all possibility
+        For english search, we should consider only key words?
+        For this search we will be given a list(of string) with a size of 3
+        [kanji][kana][english]
+        For now we shall only do search based on kana and kanji
+        We will know what search to do when only one of the index has a full string
+        [""][""][""]
+        if none are filled then we should make user keep on doing inputs until one 
+        is filled
+        Comparable findWord(std::vector<string> info);
+        */
+        Comparable findWord(Comparable word){
+            return findWord(word, root);
+        }
+
     private:
         struct vocabNode{
             Comparable data;
@@ -59,8 +82,22 @@ class vocabTree{
                 return true;
             
         }
+        Comparable findWord(const Comparable &x, vocabNode *&node){
+            if(x < node->data){
+                return findWord(x,node->left);
+            }else if(node->data < x){
+                return findWord(x,node->right);
+            }
+            else{
+                return node->data;
+            }
+
+        }
         //now we want to find words such that user will look for its kanji, kana or english def
         //therefore when we want to search, we want to be given a string and make sure that
         //we check all 3 in order to determine if its in the tree or not
         //Also note that Kanji != NONE
+        /*Comparable findVocab(vocabNode * & root, const std::string & find){
+            
+        }*/
 };
