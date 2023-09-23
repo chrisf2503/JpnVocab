@@ -59,6 +59,9 @@ class vocabTree{
         };
         vocabNode *root;
         int numNodes;
+        //Their are some words that are being misplaces, such that we cant find them!
+        //Therefore we need to figure out a better implementation for this in order
+        //To find these words
         void insert(const Comparable & x, vocabNode * & node){
             if(node == nullptr){
                 numNodes++;
@@ -93,11 +96,4 @@ class vocabTree{
             }
 
         }
-        //now we want to find words such that user will look for its kanji, kana or english def
-        //therefore when we want to search, we want to be given a string and make sure that
-        //we check all 3 in order to determine if its in the tree or not
-        //Also note that Kanji != NONE
-        /*Comparable findVocab(vocabNode * & root, const std::string & find){
-            
-        }*/
 };
