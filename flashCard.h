@@ -130,12 +130,12 @@ class FlashCard{
                 count++;
             }
         }
-        bool contain(const std::string &noKanji,const std::string &kana){
-            define w({noKanji,kana,""});
-            return tree.contain(w);
-        }
         bool contain(const std::string &kanji){
             define w({kanji,"",""});
+            return tree.contain(w);
+        }
+        bool contain(const std::string &noKanji,const std::string &kana){
+            define w({noKanji,kana,""});
             return tree.contain(w);
         }
         size_t get_flashCard_size(){
@@ -144,14 +144,14 @@ class FlashCard{
         size_t get_tree_size(){
             return tree.get_size();
         }
-        std::vector<std::string> find_word(const std::string & noKanji, const std::string & kana){
-            define w({noKanji,kana,""});
+        std::vector<std::string> find_word(const std::string & kanji){
+            define w({kanji,"",""});
             w = tree.findWord(w);
             std::vector<std::string> found{w.kanji,w.hiragana,w.english};
             return found;
         }
-        std::vector<std::string> find_word(const std::string & kanji){
-            define w({kanji,"",""});
+        std::vector<std::string> find_word(const std::string & noKanji, const std::string & kana){
+            define w({noKanji,kana,""});
             w = tree.findWord(w);
             std::vector<std::string> found{w.kanji,w.hiragana,w.english};
             return found;
@@ -172,8 +172,9 @@ class FlashCard{
             bool operator<(const define & word)const{
                 if(word.kanji != "NONE"){
                     return this->kanji < word.kanji;
-                }
-               return this->hiragana < word.hiragana;
+                }else{
+                    return this->hiragana < word.hiragana;
+                }   
             }
         };
         std::vector<define> list;
