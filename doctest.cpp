@@ -83,6 +83,12 @@ TEST_CASE("Containing basic words in samples"){
     CHECK(!vocab2.contain("NONE","き"));
     CHECK(vocab2.contain("免許"));
     CHECK(vocab.contain("NONE","ごめん"));
+    std::ifstream f3("Vocab21.txt");
+    FlashCard v3(f3);
+    CHECK(v3.contain("見つける"));
+    CHECK(v3.contain("気が付く"));
+    CHECK(v3.contain("盗む"));
+    CHECK(v3.get_tree_size() == v3.get_flashCard_size());
 }
 TEST_CASE("Find and get word"){
     std::ifstream f("sample.txt");
@@ -100,5 +106,4 @@ TEST_CASE("Find and get word"){
         CHECK(s[1] == "ごめん");
         CHECK(s[2] == "I’m sorry(casual)");
     }
-    
 }
