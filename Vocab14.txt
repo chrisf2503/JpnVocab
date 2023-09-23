@@ -1,0 +1,25 @@
+漢字		    かな			英語奥さん			おくさん			(your/someone's) wife
+ご主人			ごしゅじん			(your/someone's) husband
+NONE			パートナー			partner
+NONE			おばさん			aunt; middle-aged women
+NONE			おじさん			uncle; middle-aged man
+両親			りょうしん			parents
+大家さん			おおやさん			landlord; landlady
+皆さん			みなさん			everyone; all of you
+NONE			チョコテート			chocolate
+NONE			みかん			mandarin orange
+NONE			トレーナー			shirt
+NONE			ネクタイ			necktie
+NONE			マフラー			winter scarf
+指輪			ゆびわ			ring
+鉛筆			えんぴつ			pencil 
+NONE			ぬいぐるみ			stuffed animal
+漫画			まんが			comic book
+化粧品			けしょうひん			comsmetics
+NONE			ラジオ			radio
+お皿			おさら			plate; dish
+お返し			おかえし			return (as a token of graditude)
+履歴書			りれきしょ			resume
+NONE			クリスマス			christmas
+NONE			バレンタインデー			valentine's day
+NONE			ホワイトデー			white day
