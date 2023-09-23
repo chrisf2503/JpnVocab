@@ -3,9 +3,41 @@
 #include <vector>
 #include <fstream>
 #include <string>
-//Now we want ot think about using the same concept in addingToExisting, to creatingNew\
-//thinking about weather it should all be one method or seperate
-
+void findWords(FlashCard & f){
+    std::string kanji, kana, userInput;
+    std::cout << "this will only find kanji words or hiragana or katakana that do not have kanji\n"
+    << "if you are trying to look for a kana with kanji then results might not show\n"
+    << "please follow the instruction carefully!\n"
+    << "If you are looking for a kanji word please type it in, if not hit enter\n"
+    << "type in the kanaword you will be looking for\n";
+    std::vector<std::string> word{"","",""};
+    while(userInput != "yes"){
+        std::cout << "Kanji: ";
+        getline(std::cin,kanji);
+        if(kanji == ""){
+            std::cout << "Kana: ";
+            getline(std::cin,kana);
+            kanji = "NONE";
+            if(!f.contain(kanji,kana)){
+                std::cout << "Word doesnt not exist yet! Try a new Word!" << std::endl;
+                continue; 
+            }
+            word = f.find_word(kanji,kana);
+        }else{
+            if(!f.contain(kanji)){
+                std::cout << "Word doesnt not exist yet! Try a new Word!" << std::endl;
+                continue; 
+            }
+            word = f.find_word(kanji);
+        }
+        std::cout << "Here is the result:" << std::endl;
+        std::cout << "Kanji: " << word[0] << std::endl;
+        std::cout << "Kana: " << word[1] << std::endl;
+        std::cout << "English: " << word[2] << std::endl;
+        std::cout << "Are you finished(type yes) if not hit enter: ";
+        getline(std::cin, userInput);
+    }
+}
 //We want to add a new method called Addwords where we are going to read from an
 //Exisiting file and then check if the user inputs are valid or not
 //Therefore we will make the list/tree and let user input until we get a 
@@ -96,7 +128,7 @@ int main(int argc, char **argv) {
     //argv[1] = name, argv[2] = method type
     //method type = studying || new || review 
     if(argc != 3){
-        std::cout << argv[0] << " <Chapter#> <Method>" << std::endl;
+        std::cout << argv[0] << " <Vocab#> <Method>" << std::endl;
         return 0; 
     }
     std::string filename(argv[1]);
@@ -149,6 +181,10 @@ int main(int argc, char **argv) {
     else if (method == "add"){
         std::ofstream open(filename,std::ios::app);
         add(f,open);
+    }
+    else if(method == "find"){
+        std::cout << "Currently working on it!" << std::endl;
+        //findWords(f);
     }
     else{
         std::cout << "The choice of method does not exist" << std::endl;
