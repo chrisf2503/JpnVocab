@@ -1,0 +1,40 @@
+漢字		    かな			英語靴下			くつした			socks
+袋			ふくろ			sack; plastic/paper bag
+NONE			ただ			free of charge
+夕食			ゆうしょく			dinner
+場所			ばしょ			place
+階段			かいだん			stairs
+小学校			しょうがっこう			elementary school
+面接			めんせつ			interview
+健康			けんこう			health
+理想			りそう			ideal
+留守番			るすばん			looking after a house during someone's absence
+NONE			メッセージ			message; test
+休講			きゅうこう			class cancellation
+海外旅行			かいがいりょこう			trip to a foreign country
+盆踊り			ぼんおどり			bon dance (japanese traditinoal dance)
+思い出			おもいで			memory
+社会			しゃかい			society
+結果			けっか			result
+調査			ちょうさ			survey
+NONE			まずい			(food is) terrible
+NONE			かわいそう（な）			pitiful; feel sorry; poor thing
+雨がやむ			あめがやむ			the rain stops
+違う			ちがう			to be different; to be wrong
+NONE			なくなる			to be lost; to disappear
+NONE			いなくなる			(someone) is gone; to disappear
+お世話になる			おせわになる			to be in someone's care
+NONE			おなかをこわす			to have a stomachache
+気に入る			きにいる			to find something agreeable
+悪口を言う			わるぐちをいう			to talk behind someone's back
+答える			こたえる			to answer
+離れる			はなれる			(something/someone) separates; parts from
+NONE			がっかりする			to be disappointed
+我慢する			がまんする			to be tolerant/patient
+同情する			どうじょうする			to sympathize
+〜顔をする			〜かおをする			to look... (facial expression)
+NONE			カンニングする			to cheat in an exam
+NONE			チェックする			to check
+世話をする			せわをする			to take care of...
+優勝する			ゆうしょうする			to win a championship
+戻ってする			もどってする			(something/someone) come back
