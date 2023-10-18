@@ -61,7 +61,8 @@ class vocabTree{
         int numNodes;
         //Their are some words that are being misplaces, such that we cant find them!
         //Therefore we need to figure out a better implementation for this in order
-        //To find these words
+        //To find these words, or else try to use another data structer that will (probably hash table with link list)
+        
         void insert(const Comparable & x, vocabNode * & node){
             if(node == nullptr){
                 numNodes++;

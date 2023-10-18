@@ -38,13 +38,7 @@ void findWords(FlashCard & f){
         getline(std::cin, userInput);
     }
 }
-//We want to add a new method called Addwords where we are going to read from an
-//Exisiting file and then check if the user inputs are valid or not
-//Therefore we will make the list/tree and let user input until we get a 
-//signal of if the words exist or not, if the word exist, then we must tell user,
-//we have a the word, else continue
-//if we dont have any input for the english word or kana word then we should not 
-//include it within our word set (so we dont have to delete it manually)
+
 void add(FlashCard & f,std::ofstream & filename){
     std::string kanji, kana, eng, userInput;
     std::cout << "If the word has no kanji that is associated with it please hit enter " << std::endl;
@@ -120,10 +114,7 @@ void studyMethod(FlashCard &f,const bool &study_kanji){
         f.guessEngl(getNum);
     }
 }
-//We dont want to accept anything that has nothing to do with Vocabulary
-//We must check weather the first 5 letter has the words VOCAB, if it does 
-//Then we should continue, if not abort and tell user we can continue
-//Firgure out how to be able to read the newWords.txt file
+
 int main(int argc, char **argv) {
     //argv[1] = name, argv[2] = method type
     //method type = studying || new || review 
