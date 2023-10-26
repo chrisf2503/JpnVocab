@@ -65,10 +65,13 @@ We will allow user to input the Chapter number <Chapter#> and allow user to choo
 Givin the kanji or kana, we want to be able to look up that work from any of the following chapters, therefore we might want to have a while that will contain all word from every chapter, merge them all together, the file could be name all.txt and when adding words, we can also check if it exist or not. 
 Therefore trying to figure out which data strcutre can go best with it.
 
+Note:
+A tree implementation was made, but it was soon to be discovered that we are able to store these words within a tree by its kanji or kana character (if doesnt have kanji), but now here the main issue is they are some words that are already stored but now they are no where to be found, they exist within the tree but when looking for that exact same word, then we are told it does not exist. 
+
 # Future plans
 
-I want to include current lessons not only within my JPN class but also use CS algorithms and data structure as I advance in my classes. 
-I will also try to include basic sentence structure on how vocab is being used. But also trying to keep it within the level of each chapter.
+- I want to include current lessons not only within my JPN class but also use CS algorithms and data structure as I advance in my classes. 
+- I will also try to include basic sentence structure on how vocab is being used. But also trying to keep it within the level of each chapter.
 
 # How to run the code
 
