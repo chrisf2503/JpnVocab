@@ -72,6 +72,8 @@ A tree implementation was made, but it was soon to be discovered that we are abl
 
 - I want to include current lessons not only within my JPN class but also use CS algorithms and data structure as I advance in my classes. 
 - I will also try to include basic sentence structure on how vocab is being used. But also trying to keep it within the level of each chapter.
+# Noticed:
+When working on this project, kanji(chinese character) are consider to be multicharcters, therefore when trying to do something like char == char would not work and lead to the incorrect character, therefore use string for these characters. 
 
 # How to run the code
 
