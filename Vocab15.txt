@@ -1,4 +1,5 @@
-漢字		    かな			英語外国人			がいこくじん			foreigner
+漢字		    かな			英語
+外国人			がいこくじん			foreigner
 NONE			そば			soba; Japanese bucketwheat noodle
 絵			え			painting; pitcure; drawing
 地図			ちず			map
