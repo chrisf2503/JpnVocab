@@ -6,6 +6,7 @@
 #include <ctime>        // std::time
 #include <cstdlib>      // std::rand, std::srand
 #include "VocabTree.h"
+#include "word.h"
 class FlashCard{
     public:
         //We want to the file and put them all within the list
@@ -48,9 +49,9 @@ class FlashCard{
             std::string userinput_;
             std::srand ( unsigned ( std::time(0) ) );
             std::random_shuffle(list.begin(),list.end());
-            std::vector<define>::iterator itr = list.begin();
+            std::vector<word>::iterator itr = list.begin();
             while(itr != list.end() && counter != num){
-                define word = *itr;
+                word word = *itr;
                 std::cout << "What is the meaning of ";
                 if(word.kanji == "NONE"){
                     std::cout << word.hiragana << std::endl;
@@ -85,9 +86,9 @@ class FlashCard{
             std::string userinput_;
             std::srand ( unsigned ( std::time(0) ) );
             std::random_shuffle(list.begin(),list.end());
-            std::vector<define>::iterator itr = list.begin();
+            std::vector<word>::iterator itr = list.begin();
             while(counter != num && itr != list.end()){
-                define word = *itr;
+                word word = *itr;
                 std::cout << "Guess the meaning of \"" << word.english << "\"" 
                 << std::endl << "Enter: ";
                 getline(std::cin, userinput_);
@@ -114,9 +115,9 @@ class FlashCard{
             std::cout << "Hit Enter once you are ready to move on" << std::endl;
             size_t count = 0;
             std::random_shuffle(list.begin(),list.end());
-            std::vector<define>::iterator itr = list.begin();
+            std::vector<word>::iterator itr = list.begin();
             while(count != num){
-                define word = *itr;
+                word word = *itr;
                 std::cout << count+1 << ". ";
                 if(word.kanji != "NONE"){
                     std::cout << "Kanji: " << word.kanji << " ";
@@ -131,11 +132,11 @@ class FlashCard{
             }
         }
         bool contain(const std::string &kanji){
-            define w({kanji,"",""});
+            word w({kanji,"",""});
             return tree.contain(w);
         }
         bool contain(const std::string &noKanji,const std::string &kana){
-            define w({noKanji,kana,""});
+            word w({noKanji,kana,""});
             return tree.contain(w);
         }
         size_t get_flashCard_size(){
@@ -145,38 +146,18 @@ class FlashCard{
             return tree.get_size();
         }
         std::vector<std::string> find_word(const std::string & kanji){
-            define w({kanji,"",""});
+            word w({kanji,"",""});
             w = tree.findWord(w);
             std::vector<std::string> found{w.kanji,w.hiragana,w.english};
             return found;
         }
         std::vector<std::string> find_word(const std::string & noKanji, const std::string & kana){
-            define w({noKanji,kana,""});
+            word w({noKanji,kana,""});
             w = tree.findWord(w);
             std::vector<std::string> found{w.kanji,w.hiragana,w.english};
             return found;
         }
     private:  
-        struct define{
-            std::string kanji;
-            std::string hiragana;
-            std::string english;
-            //Adding japanese and english sentence with chapter grammer 
-            //std::string jpnSent; std::string engSent;
-            //index 0 is kanji, index 1 is hiragana, index 2 is english
-            define(const std::vector<std::string> & vocab){
-                this->kanji = vocab[0];
-                this->hiragana = vocab[1];
-                this->english = vocab[2];
-            }
-            bool operator<(const define & word)const{
-                if(word.kanji != "NONE"){
-                    return this->kanji < word.kanji;
-                }else{
-                    return this->hiragana < word.hiragana;
-                }   
-            }
-        };
-        std::vector<define> list;
-        vocabTree<define> tree;
+        std::vector<word> list;
+        vocabTree<word> tree;
 };
