@@ -24,7 +24,7 @@ notes.o: notes.cpp
 
 test.o: test.cpp flashCard.h VocabTree.h
 
-doctest.o: doctest.cpp doctest.h flashCard.h VocabTree.h
+doctest.o: doctest.cpp doctest.h flashCard.h VocabTree.h KanjiList.h word.h
 
 clean:
 	rm -f $(OBJECTS) $(TEST) $(DOCTEST) $(NOTES)
